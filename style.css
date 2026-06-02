@@ -1,0 +1,55 @@
+    /* 這裡負責設定外觀 */
+    body {
+      color:white;
+      /* 優先使用微軟正黑體，接著是蘋方體，最後是系統內建黑體 */
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+    }
+      /* 1. 模擬網頁最上方的白色導覽列 */
+        .header {
+            background-color: black;
+            width: 100%;
+            height: 100px;           /* 設定導覽列高度 */
+            display: flex;
+            align-items: center;    /* 讓內容垂直置中 */
+            padding-left: 50px;     /* 距離左邊邊界的距離 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 輕微陰影，增加質感 */
+        }
+
+        /* 2. LOGO 整體容器 */
+        .logo-container {
+            display: flex;          /* 讓圖片與文字水平排列 */
+            align-items: center;    /* 垂直對齊中心 */
+            text-decoration: none;  /* 如果是連結，移除底線 */
+        }
+
+        /* 3. 左側圖示大小 */
+        .logo-icon {
+            border-radius: 50%;  /* 變圓形 */
+            height: 65px;           /* 調整圖片高度，符合截圖比例 */
+            width: auto;
+            margin-right: 12px;     /* 圖片與文字之間的間隔 */
+        }
+
+        /* 4. 右側文字區塊 */
+        .logo-text-group {
+            display: flex;
+            flex-direction: column; /* 讓兩行文字上下堆疊 */
+            color: white;         /* 精確的桃紅色 */
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+        }
+
+        /* 5. 上方大標題 */
+        .main-title {
+            font-family: "Noto Sans TC", sans-serif;
+            font-size: 32px;        /* 標題大小 */
+            font-weight: 700;      /* 加粗 */
+            line-height: 1;         /* 緊湊行高 */
+            letter-spacing: 2px;    /* 中文字間距 */
+        }
+
+        /* 6. 下方英文小字 */
+        .sub-title {
+            font-size: 18px;        /* 英文縮小 */
+            margin-top: 4px;        /* 與上方標題的距離 */
+            font-weight: 500;
+        }
