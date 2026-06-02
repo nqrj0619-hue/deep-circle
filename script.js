@@ -19,3 +19,20 @@ window.addEventListener('error', function (e ) {
             img.onerror = null;
         }
     }, true );
+
+    async function loadEvents() {
+    try {
+        // 抓取 events.txt，加上時間戳記避免瀏覽器快取舊資料
+        const response = await fetch('events.txt?t=' + new Date().getTime());
+        if (!response.ok) throw new Error('找不到活動檔案');
+        const data = await response.text();
+        // 將讀取到的文字放入網頁中
+        document.getElementById('event-list').textContent = data;
+    } catch (error) {
+        console.error('讀取失敗:', error);
+        document.getElementById('event-list').textContent = '暫時無法載入活動資訊。';
+    }
+}
+
+// 網頁載入完成後執行
+window.addEventListener('DOMContentLoaded', loadEvents);
